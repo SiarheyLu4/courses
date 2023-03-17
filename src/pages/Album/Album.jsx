@@ -29,7 +29,7 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const theme = createTheme();
 
@@ -41,7 +41,7 @@ export default function Album() {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            Album layout1
           </Typography>
         </Toolbar>
       </AppBar>
@@ -62,7 +62,7 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              Album layout2
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
               Something short and leading about the collection below—its contents,
