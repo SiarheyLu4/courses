@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+import CoursesList from "components/CoursesList/CoursesList";
+
 const Courses = () => {
   return (
     <HomeContainer>
       <H2>Courses Page</H2>
+      <CoursesList />
     </HomeContainer>
   )
 }
