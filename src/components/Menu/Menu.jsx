@@ -1,5 +1,5 @@
-// import { NavLink } from "react-router-dom";
-// import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,14 +14,14 @@ export const Menu = () => {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            {/* <Ul>
+            <Ul>
               <li>
                 <HeaderLink to='/'>Courses</HeaderLink>
               </li>
               <li>
                 <HeaderLink to='/:id'>Course</HeaderLink>
               </li>
-            </Ul> */}
+            </Ul>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -29,17 +29,17 @@ export const Menu = () => {
   )
 }
 
-// const Ul = styled.ul`
-//   list-style: none;
-//   display: flex;
-// `
-// const HeaderLink = styled(NavLink)`
-//   color: white;
-//   font-size: 24px;
-//   padding: 20px;
-//   text-decoration: none;
-//   &.active {
-//     color: black;
-//     text-decoration: underline;
-//   }
-// `
+const Ul = styled.ul`
+  list-style: none;
+  display: flex;
+`
+const HeaderLink = styled(NavLink)`
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  text-decoration: none;
+  &.active {
+    color: black;
+    text-decoration: underline;
+  }
+`
