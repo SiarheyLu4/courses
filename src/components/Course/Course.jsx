@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCourse } from "shared/api/courses";
 import { useParams } from "react-router-dom";
+import { Loader } from "components/Loader/Loader";
 
 
 const Course = () => {
@@ -46,12 +47,17 @@ const Course = () => {
     fetchCoursesList()
   }, [id, setState]);
 
-  const { title, description } = state.item;
+  const { loading, error } = state;
+
+  const { title, description, previewImageLink } = state.item;
 
   return (
     <div>
       <h3>{title}</h3>
+      <img src={`${previewImageLink}/cover.webp`} alt="previewImageLink" />
       <p>{description}</p>
+      {loading && <Loader />}
+      {error && <p>Loading movies failed</p>} 
     </div>
   )
 }
