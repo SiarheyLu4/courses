@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-const MoviesPage = () => {
+import Course from "components/Course/Course";
+
+const CoursePage = () => {
   return (
     <MoviesContainer>
       <H2>Course Page</H2>
+      <Course />
     </MoviesContainer>
   )
 }
@@ -17,4 +20,4 @@ font-size: 32px;
 text-align: center;
 margin:12px;
 `
-export default MoviesPage;
+export default CoursePage;

@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { getCourse } from "shared/api/courses";
+import { useParams } from "react-router-dom";
 
-import { Loader } from "components/Loader/Loader";
-import { getCoursesList } from "shared/api/courses";
 
-const CoursesList = () => {
+const Course = () => {
   const [state, setState] = useState({
-    items: [],
+    item: {},
     loading: false,
     error: null,
   });
 
+  const { id } = useParams();
+  
   useEffect(() => {
     const fetchCoursesList = async () => {
       try {
@@ -19,11 +20,11 @@ const CoursesList = () => {
           loading: true,
           error: null,
         }));
-        const result = await getCoursesList();
+        const result = await getCourse(id);
         setState(prevState => {
           return {
             ...prevState,
-            items: [...prevState.items, ...result]
+            item: result,
           }
         })
       } catch (error) {
@@ -43,22 +44,16 @@ const CoursesList = () => {
     };
 
     fetchCoursesList()
-  }, [setState]);
+  }, [id, setState]);
 
-  const { items, loading, error } = state;
-
-  const elements = items.map(({ id, title }) => <li key={id}>
-    <Link to={`/${id}`}>{title}</Link>
-  </li>)
+  const { title, description } = state.item;
 
   return (
     <div>
-      <ol>{ elements }</ol>
-      {loading && <Loader />}
-      {error && <p>Loading movies failed</p>}
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   )
-
 }
 
-export default CoursesList;
+export default Course;

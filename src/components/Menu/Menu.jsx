@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 // import styled from "styled-components";
 
 import AppBar from '@mui/material/AppBar';
@@ -7,8 +7,6 @@ import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Typography from '@mui/material/Typography';
 // import Link from '@mui/material/Link';
 
-import styled from "styled-components";
-
 export const Menu = () => {
   return (
     <div>
@@ -16,14 +14,14 @@ export const Menu = () => {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            <Ul>
+            {/* <Ul>
               <li>
                 <HeaderLink to='/'>Courses</HeaderLink>
               </li>
               <li>
-                <HeaderLink to='/course'>Course</HeaderLink>
+                <HeaderLink to='/:id'>Course</HeaderLink>
               </li>
-            </Ul>
+            </Ul> */}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -31,17 +29,17 @@ export const Menu = () => {
   )
 }
 
-const Ul = styled.ul`
-  list-style: none;
-  display: flex;
-`
-const HeaderLink = styled(NavLink)`
-  color: white;
-  font-size: 24px;
-  padding: 20px;
-  text-decoration: none;
-  &.active {
-    color: black;
-    text-decoration: underline;
-  }
-`
+// const Ul = styled.ul`
+//   list-style: none;
+//   display: flex;
+// `
+// const HeaderLink = styled(NavLink)`
+//   color: white;
+//   font-size: 24px;
+//   padding: 20px;
+//   text-decoration: none;
+//   &.active {
+//     color: black;
+//     text-decoration: underline;
+//   }
+// `
